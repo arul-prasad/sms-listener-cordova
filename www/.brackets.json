@@ -1,0 +1,9 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/BSINDIADEV_SHARED/4Muragavel/ExpenseTracker/www/js/app/expenses/expenses-controller.js",
+        "D:/BSINDIADEV_SHARED/4Muragavel/ExpenseTracker/www/js/sms/smsspec.js",
+        "D:/BSINDIADEV_SHARED/4Muragavel/ExpenseTracker/www/js/common/controllers.js",
+        "D:/BSINDIADEV_SHARED/4Muragavel/ExpenseTracker/www/js/common/services.js",
+        "D:/BSINDIADEV_SHARED/4Muragavel/ExpenseTracker/www/js/app/sms/sms-controller.js"
+    ]
+}

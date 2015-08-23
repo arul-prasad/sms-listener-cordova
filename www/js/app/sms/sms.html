@@ -1,0 +1,27 @@
+<ion-view view-title="SMS">
+  <ion-content class="padding">
+    <!--<div class="list card">
+      <div class="item item-divider">No of SMs in inbox</div>
+      <div class="item item-body">
+        <ion-item >
+      		{{NoOfsmss}}  {{smss}}
+    	</ion-item>
+      </div>
+    </div>-->
+    <div class="list card">
+      <div class="item item-divider">Inbox Sms</div>
+      <div class="item item-body">
+        <ion-item ng-repeat="sms in smsList">
+      		{{sms[columns.BODY]}} {{sms[columns.DATE]}}
+    	</ion-item>
+      </div>
+    </div>
+    <form ng-submit="readSms()">
+      <div class="list">
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Read SMS</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
