@@ -23,9 +23,10 @@ function smsCtrlFn($scope, $log, $timeout, $ionicPopup, apiServices) {
 		//call couch db functions to store the SMS
 		$scope.smsData = {
 			sender: 'AM-ICICIB',
-			msg: data.body
-            //msg: 'Dear Customer, You have made a Debit Card purchase of INR300.00 on 15 Jul. Info.VPS*MADHUS SERV. Your Net Available Balance is INR XXXXX.'
+			//msg: data.body
+            msg: 'Dear Customer, You have made a Debit Card purchase of INR300.00 on 15 Jul. Info.VPS*MADHUS SERV. Your Net Available Balance is INR XXXXX.'
 		};
+        
 		smsReader.parse($scope.smsData, function(transactionData) {
 			$log.log("after parse Sms", transactionData);
 			$scope.transactionData = transactionData;
@@ -40,27 +41,17 @@ function smsCtrlFn($scope, $log, $timeout, $ionicPopup, apiServices) {
 			$scope.transactionData = {};
 			$scope.error = e;
 		});
-
-
-		$scope.doParse = function() {
-			$log.log('Doing  parsing', $scope.smsData);
-
-			var doc = { desc : "test", amount : 1000 };
-			doc.type = "expense"
-			config.db.post(doc, function(err, ok) {
-				$log.log("inserted successfully");
-			});
-
-		};
 	};
 	var successCallbackGetSms = function(data){
 		$scope.smsList=[];
 		if(Array.isArray(data)){
 			for (var i = 0; i < data.length; i++) {
+                /*var sms = data[i];
+                $log.log(" sms " , sms);
+                data[i].date=new Date(data[i].date);*/
 				$scope.smsList.push(data[i])
 			}
     	}
-		smsrec.startReception(successCallbackReception, failureCallback);
 	};
 	
 	var successCallbackSmsCount = function(data){
